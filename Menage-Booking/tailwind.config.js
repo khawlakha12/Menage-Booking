@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        kadwa: ['"Kadwa"', 'system-ui', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
-}
+};
