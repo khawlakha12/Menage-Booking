@@ -1,12 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import cuisine1 from '../../assets/sevices/cuisine.png';
-import cuisine2 from '../../assets/sevices/cuisine2.png';
-import manage1 from '../../assets/sevices/menage1.png';
-import nono from '../../assets/sevices/nono.png';
-import seviveMenage from '../../assets/sevices/sevive menage.png';
-
 
 export default function ConferenceGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
