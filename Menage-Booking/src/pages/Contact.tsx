@@ -38,7 +38,7 @@ export default function Contact() {
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <button className={`hidden md:block px-4 py-2 ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} transition-colors`}>
+              <button className={`hidden md:block px-4 py-2 ${isDark ? 'text-blue-500 hover:text-[#0a1628]' : 'text-gray-700 hover:text-gray-900'} transition-colors`}>
                 Sign In
               </button>
               <button className="hidden md:block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
@@ -56,13 +56,13 @@ export default function Contact() {
           {/* Mobile Menu */}
           {menuOpen && (
             <div className="md:hidden py-4 space-y-3">
-              <a href="#" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Home</a>
-              <a href="#" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Reservation</a>
-              <a href="#" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>About</a>
-              <a href="#" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</a>
-              <a href="#" className="block text-blue-500 hover:text-blue-400 transition-colors">Contact</a>
+              <Link to="/" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Home</Link>
+              <Link to="/Reservation" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Reservation</Link>
+              <Link to="/About" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>About</Link>
+              <Link to="/Blog" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</Link>
+              <Link to="/contact" className="block text-blue-500 hover:text-blue-400 transition-colors">Contact</Link>
               <div className="pt-3 space-y-2">
-                <button className={`block w-full px-4 py-2 text-left ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Sign In</button>
+                <button className={`block w-full px-4 py-2 text-center ${isDark ? 'text-blue-500' : 'text-gray-700'}`}>Sign In</button>
                 <button className="block w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Sign Up</button>
               </div>
             </div>
