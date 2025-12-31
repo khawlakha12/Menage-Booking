@@ -19,13 +19,13 @@ export default function Reservation() {
   });
 
   const dates = [
-    { day: 16, month: 'JUN 2024' },
-    { day: 17, month: 'JAN 2024' },
-    { day: 18, month: 'FEB 2024' },
-    { day: 19, month: 'APR 2024' },
-    { day: 20, month: 'MAY 2024' },
-    { day: 21, month: 'AUG 2024' },
-    { day: 22, month: 'SEP 2024' },
+    { day: 25, month: 'Dec 2025' },
+    { day: 26, month: 'Dec 2025' },
+    { day: 27, month: 'Dec 2025' },
+    { day: 28, month: 'Dec 2025' },
+    { day: 29, month: 'Dec 2025' },
+    { day: 30, month: 'Dec 2025' },
+    { day: 31, month: 'Dec 2025' },
   ];
 
   const services = [
@@ -99,7 +99,7 @@ export default function Reservation() {
 
   const testimonials = [
     {
-      name: 'Fatima El Amrani',
+      name: 'Khawla ',
       text: 'Service impeccable ! Mon appartement n\'a jamais été aussi propre. L\'équipe est professionnelle, ponctuelle et très attentive aux détails. Je recommande vivement leurs services.',
       rating: 5
     },
@@ -150,7 +150,7 @@ export default function Reservation() {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">M</span>
               </div>
-              <span className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>CleanPro</span>
+              <span className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Booking</span>
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
