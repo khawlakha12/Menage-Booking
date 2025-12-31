@@ -1,11 +1,42 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-import { Sun, Moon, Menu, X, Mail, Briefcase, ArrowRight } from 'lucide-react';
+import { Sun, Moon, Menu, X, Mail, Briefcase, ArrowRight, Phone, MapPin, Clock } from 'lucide-react';
 import Footer from "../components/Footer";
 
 export default function Contact() {
   const [isDark, setIsDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    service: '',
+    date: '',
+    time: ''
+  });
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = () => {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.service || !formData.date || !formData.time) {
+      alert('Veuillez remplir tous les champs obligatoires.');
+      return;
+    }
+    console.log('Consultation:', formData);
+    alert('Demande de consultation envoyée ! Nous vous contacterons bientôt.');
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      service: '',
+      date: '',
+      time: ''
+    });
+  };
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-[#0a1628]' : 'bg-gray-50'} transition-colors duration-300`}>
@@ -23,11 +54,11 @@ export default function Contact() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Home</Link>
-              <Link to="/Reservation" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Reservation</Link>
-              <Link to="/About" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>About</Link>
-              <Link to="/Blog" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</Link>
-              <Link to="/contact" className={`${isDark ? 'text-blue-500 hover:text-blue-400' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</Link>
+              <a href="/" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Accueil</a>
+              <a href="/reservation" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Réservation</a>
+              <a href="/about" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</a>
+              <a href="/blog" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</a>
+              <a href="/contact" className={`${isDark ? 'text-blue-500 hover:text-blue-400' : 'text-blue-600 hover:text-blue-700'} transition-colors font-medium`}>Contact</a>
             </div>
 
             {/* Right Side Actions */}
@@ -38,11 +69,11 @@ export default function Contact() {
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <button className={`hidden md:block px-4 py-2 ${isDark ? 'text-blue-500 hover:text-[#0a1628]' : 'text-gray-700 hover:text-gray-900'} transition-colors`}>
-                Sign In
+              <button className={`hidden md:block px-4 py-2 ${isDark ? 'text-blue-400 hover:text-blue-300' : 'text-gray-700 hover:text-gray-900'} transition-colors`}>
+                Connexion
               </button>
               <button className="hidden md:block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                Sign Up
+                Inscription
               </button>
               <button 
                 onClick={() => setMenuOpen(!menuOpen)}
@@ -55,15 +86,15 @@ export default function Contact() {
 
           {/* Mobile Menu */}
           {menuOpen && (
-            <div className="md:hidden py-4 space-y-3">
-              <Link to="/" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Home</Link>
-              <Link to="/Reservation" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Reservation</Link>
-              <Link to="/About" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>About</Link>
-              <Link to="/Blog" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</Link>
-              <Link to="/contact" className="block text-blue-500 hover:text-blue-400 transition-colors">Contact</Link>
+            <div className="md:hidden py-4 space-y-3 border-t border-gray-800">
+              <a href="/" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Accueil</a>
+              <a href="/reservation" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Réservation</a>
+              <a href="/about" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</a>
+              <a href="/blog" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</a>
+              <a href="/contact" className="block text-blue-500 hover:text-blue-400 transition-colors font-medium">Contact</a>
               <div className="pt-3 space-y-2">
-                <button className={`block w-full px-4 py-2 text-center ${isDark ? 'text-blue-500' : 'text-gray-700'}`}>Sign In</button>
-                <button className="block w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Sign Up</button>
+                <button className={`block w-full px-4 py-2 text-center ${isDark ? 'text-blue-400' : 'text-gray-700'}`}>Connexion</button>
+                <button className="block w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Inscription</button>
               </div>
             </div>
           )}
@@ -76,15 +107,15 @@ export default function Contact() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
             <div className="max-w-2xl">
               <h1 className={`text-3xl md:text-5xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-4`}>
-                Contact Us
+                Contactez-Nous
               </h1>
               <p className={`text-base md:text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'} leading-relaxed`}>
-                Discover a wealth of insightful materials meticulously crafted to provide you with a comprehensive understanding of the latest trends.
+                Nous sommes à votre disposition pour répondre à toutes vos questions concernant nos services de nettoyage professionnel et obtenir un devis personnalisé.
               </p>
             </div>
             <div className="flex items-center space-x-2 text-sm">
-              <a href="#" className={`${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
-                Home
+              <a href="/" className={`${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>
+                Accueil
               </a>
               <span className={`${isDark ? 'text-gray-600' : 'text-gray-400'} text-lg`}>›</span>
               <span className={`${isDark ? 'text-white' : 'text-gray-900'} font-medium`}>Contact</span>
@@ -99,13 +130,13 @@ export default function Contact() {
                 <Mail className="text-blue-500" size={28} />
               </div>
               <h3 className={`text-xl md:text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-3`}>
-                Email US
+                Envoyez-nous un Email
               </h3>
               <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-6 leading-relaxed`}>
-                Please feel free to drop us a line. We will respond as soon as possible.
+                N'hésitez pas à nous contacter par email. Notre équipe vous répondra dans les plus brefs délais.
               </p>
               <button className="text-blue-500 font-semibold flex items-center space-x-2 hover:space-x-3 transition-all group">
-                <span>Leave a message</span>
+                <span>Envoyer un message</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -116,13 +147,13 @@ export default function Contact() {
                 <Briefcase className="text-blue-500" size={28} />
               </div>
               <h3 className={`text-xl md:text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-3`}>
-                Careers
+                Rejoignez Notre Équipe
               </h3>
               <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-6 leading-relaxed`}>
-                Sit ac ipsum leo lorem magna nunc mattis maecenas non vestibulum
+                Nous recherchons des professionnels passionnés pour rejoindre notre équipe de nettoyage.
               </p>
               <button className="text-blue-500 font-semibold flex items-center space-x-2 hover:space-x-3 transition-all group">
-                <span>Send an application</span>
+                <span>Postuler maintenant</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -137,7 +168,7 @@ export default function Contact() {
             {/* Form Section */}
             <div>
               <h2 className={`text-2xl md:text-4xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-8 md:mb-10`}>
-                Get Online<br />Consultation
+                Demandez une<br />Consultation Gratuite
               </h2>
               
               <div className="space-y-5 md:space-y-6">
@@ -145,55 +176,74 @@ export default function Contact() {
                 <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                   <div>
                     <label className={`block text-sm mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                      First Name*
+                      Prénom*
                     </label>
                     <input
                       type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      required
                       className={`w-full px-4 py-3 md:py-3.5 rounded-lg ${
                         isDark 
                           ? 'bg-[#0f1f3a] text-white border border-gray-700 focus:border-blue-500' 
                           : 'bg-white text-gray-900 border border-gray-300 focus:border-blue-500'
                       } outline-none transition-colors`}
+                      placeholder="Votre prénom"
                     />
                   </div>
                   <div>
                     <label className={`block text-sm mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                      Last Name*
+                      Nom*
                     </label>
                     <input
                       type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      required
                       className={`w-full px-4 py-3 md:py-3.5 rounded-lg ${
                         isDark 
                           ? 'bg-[#0f1f3a] text-white border border-gray-700 focus:border-blue-500' 
                           : 'bg-white text-gray-900 border border-gray-300 focus:border-blue-500'
                       } outline-none transition-colors`}
+                      placeholder="Votre nom"
                     />
                   </div>
                 </div>
 
-                {/* Email & Specialist */}
+                {/* Email & Service */}
                 <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                   <div>
                     <label className={`block text-sm mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                      Email address*
+                      Adresse Email*
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
                       className={`w-full px-4 py-3 md:py-3.5 rounded-lg ${
                         isDark 
                           ? 'bg-[#0f1f3a] text-white border border-gray-700 focus:border-blue-500' 
                           : 'bg-white text-gray-900 border border-gray-300 focus:border-blue-500'
                       } outline-none transition-colors`}
+                      placeholder="votre.email@exemple.com"
                     />
                   </div>
                   <div>
                     <label className={`block text-sm mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                      Specialist*
+                      Type de Service*
                     </label>
                     <select
+                      name="service"
+                      value={formData.service}
+                      onChange={handleInputChange}
+                      required
                       className={`w-full px-4 py-3 md:py-3.5 rounded-lg ${
                         isDark 
-                          ? 'bg-[#0f1f3a] text-gray-400 border border-gray-700 focus:border-blue-500' 
+                          ? 'bg-[#0f1f3a] text-white border border-gray-700 focus:border-blue-500' 
                           : 'bg-white text-gray-900 border border-gray-300 focus:border-blue-500'
                       } outline-none transition-colors appearance-none cursor-pointer`}
                       style={{
@@ -202,10 +252,15 @@ export default function Contact() {
                         backgroundPosition: 'right 1rem center'
                       }}
                     >
-                      <option>Choose a specialist</option>
-                      <option>Consultant</option>
-                      <option>Developer</option>
-                      <option>Designer</option>
+                      <option value="">Choisir un service</option>
+                      <option value="maison">Nettoyage de Maison</option>
+                      <option value="bureau">Nettoyage de Bureau</option>
+                      <option value="vitres">Nettoyage de Vitres</option>
+                      <option value="travaux">Nettoyage Après Travaux</option>
+                      <option value="cuisine">Nettoyage de Cuisine</option>
+                      <option value="tapis">Nettoyage de Tapis</option>
+                      <option value="desinfection">Désinfection</option>
+                      <option value="bail">Nettoyage Fin de Bail</option>
                     </select>
                   </div>
                 </div>
@@ -214,36 +269,45 @@ export default function Contact() {
                 <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                   <div>
                     <label className={`block text-sm mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                      Date*
+                      Date Souhaitée*
                     </label>
                     <input
                       type="date"
-                      placeholder="jj/mm/aaaa"
+                      name="date"
+                      value={formData.date}
+                      onChange={handleInputChange}
+                      required
                       className={`w-full px-4 py-3 md:py-3.5 rounded-lg ${
                         isDark 
-                          ? 'bg-[#0f1f3a] text-gray-400 border border-gray-700 focus:border-blue-500' 
+                          ? 'bg-[#0f1f3a] text-white border border-gray-700 focus:border-blue-500' 
                           : 'bg-white text-gray-900 border border-gray-300 focus:border-blue-500'
                       } outline-none transition-colors`}
                     />
                   </div>
                   <div>
                     <label className={`block text-sm mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                      Time*
+                      Heure Souhaitée*
                     </label>
                     <input
                       type="time"
-                      placeholder="--:--"
+                      name="time"
+                      value={formData.time}
+                      onChange={handleInputChange}
+                      required
                       className={`w-full px-4 py-3 md:py-3.5 rounded-lg ${
                         isDark 
-                          ? 'bg-[#0f1f3a] text-gray-400 border border-gray-700 focus:border-blue-500' 
+                          ? 'bg-[#0f1f3a] text-white border border-gray-700 focus:border-blue-500' 
                           : 'bg-white text-gray-900 border border-gray-300 focus:border-blue-500'
                       } outline-none transition-colors`}
                     />
                   </div>
                 </div>
 
-                <button className="w-full md:w-auto px-8 py-3 md:py-3.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-                  Make an appointment
+                <button 
+                  onClick={handleSubmit}
+                  className="w-full md:w-auto px-8 py-3 md:py-3.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-lg shadow-blue-600/30"
+                >
+                  Demander une Consultation
                 </button>
               </div>
             </div>
@@ -251,10 +315,11 @@ export default function Contact() {
             {/* Image Section */}
             <div className="relative h-[350px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden order-first lg:order-last">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=1000&fit=crop"
-                alt="Modern office space"
+                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&h=1000&fit=crop"
+                alt="Équipe de nettoyage professionnelle"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
           </div>
         </div>
@@ -263,70 +328,107 @@ export default function Contact() {
       {/* Office Locations Section */}
       <section className={`${isDark ? 'bg-[#0a1628]' : 'bg-gray-50'} py-12 md:py-20 pb-16 md:pb-24`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className={`text-2xl md:text-4xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-8 md:mb-12`}>
+            Nos Bureaux
+          </h2>
           <div className="space-y-8 md:space-y-10">
-            {/* Pune Head Office */}
-            <div className={`${isDark ? 'bg-[#0f1f3a]' : 'bg-white'} p-6 md:p-10 lg:p-12 rounded-2xl`}>
+            {/* Agadir Head Office */}
+            <div className={`${isDark ? 'bg-[#0f1f3a]' : 'bg-white'} p-6 md:p-10 lg:p-12 rounded-2xl hover:shadow-xl transition-shadow`}>
               <div className="grid md:grid-cols-3 gap-6 md:gap-8">
                 <div>
-                  <h3 className={`text-xl md:text-2xl lg:text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                    Pune Head<br />Office
+                  <h3 className={`text-xl md:text-2xl lg:text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-3`}>
+                    Bureau Principal<br />Agadir
                   </h3>
+                  <div className={`inline-flex items-center space-x-2 px-3 py-1 rounded-full ${isDark ? 'bg-blue-900/50' : 'bg-blue-100'} mt-2`}>
+                    <Clock size={14} className="text-blue-500" />
+                    <span className={`text-xs font-medium ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                      Lun-Sam: 8h-18h
+                    </span>
+                  </div>
                 </div>
                 <div>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
-                    4292 Mapleview Drive
-                  </p>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
-                    Greenfield Zip code
-                  </p>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                    38230
-                  </p>
+                  <div className="flex items-start space-x-2 mb-3">
+                    <MapPin className="text-blue-500 mt-1 flex-shrink-0" size={18} />
+                    <div>
+                      <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
+                        Avenue Hassan *
+                      </p>
+                      <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
+                        Quartier 
+                      </p>
+                      <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                        80000 Agadir, Maroc
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-2`}>
-                    headoffice@symposium.com
-                  </p>
-                  <a href="tel:7316215503" className="text-blue-500 hover:text-blue-400 transition-colors font-semibold inline-block">
-                    Call 731-621-5503
-                  </a>
+                  <div className="flex items-start space-x-2 mb-3">
+                    <Mail className="text-blue-500 mt-1 flex-shrink-0" size={18} />
+                    <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                      contact@MenageBooking.ma
+                    </p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <Phone className="text-blue-500 mt-1 flex-shrink-0" size={18} />
+                    <a href="tel:+212528234567" className="text-blue-500 hover:text-blue-400 transition-colors font-semibold">
+                      +212 500-000-000
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Bengaluru Office */}
-            <div className={`${isDark ? 'bg-[#0f1f3a]' : 'bg-white'} p-6 md:p-10 lg:p-12 rounded-2xl`}>
+            {/* Casablanca Office */}
+            <div className={`${isDark ? 'bg-[#0f1f3a]' : 'bg-white'} p-6 md:p-10 lg:p-12 rounded-2xl hover:shadow-xl transition-shadow`}>
               <div className="grid md:grid-cols-3 gap-6 md:gap-8">
                 <div>
-                  <h3 className={`text-xl md:text-2xl lg:text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                    Bengaluru<br />Office
+                  <h3 className={`text-xl md:text-2xl lg:text-3xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-3`}>
+                    Bureau de<br />Casablanca
                   </h3>
+                  <div className={`inline-flex items-center space-x-2 px-3 py-1 rounded-full ${isDark ? 'bg-blue-900/50' : 'bg-blue-100'} mt-2`}>
+                    <Clock size={14} className="text-blue-500" />
+                    <span className={`text-xs font-medium ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                      Lun-Sam: 8h-19h
+                    </span>
+                  </div>
                 </div>
                 <div>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
-                    3502 Marcus Street
-                  </p>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
-                    Geraldine Zip code
-                  </p>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                    35974
-                  </p>
+                  <div className="flex items-start space-x-2 mb-3">
+                    <MapPin className="text-blue-500 mt-1 flex-shrink-0" size={18} />
+                    <div>
+                      <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
+                        Boulevard 
+                      </p>
+                      <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-1`}>
+                        Quartier Maarif
+                      </p>
+                      <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                        20100 Casablanca, Maroc
+                      </p>
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'} mb-2`}>
-                    Office@symposium.com
-                  </p>
-                  <a href="tel:7312357993" className="text-blue-500 hover:text-blue-400 transition-colors font-semibold inline-block">
-                    Call 731-235-7993
-                  </a>
+                  <div className="flex items-start space-x-2 mb-3">
+                    <Mail className="text-blue-500 mt-1 flex-shrink-0" size={18} />
+                    <p className={`${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                      casa@MenageBooking.ma
+                    </p>
+                  </div>
+                  <div className="flex items-start space-x-2">
+                    <Phone className="text-blue-500 mt-1 flex-shrink-0" size={18} />
+                    <a href="tel:+212522987654" className="text-blue-500 hover:text-blue-400 transition-colors font-semibold">
+                      +212 500-000-000
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-<Footer />
+      <Footer />
     </div>
   );
 }
