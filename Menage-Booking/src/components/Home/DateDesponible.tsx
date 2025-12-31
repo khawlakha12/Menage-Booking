@@ -17,14 +17,14 @@ export default function DateDesponible() {
   const conferences = [
     {
       id: 1,
-      title: 'The Conference Construct Millennial',
-      speakers: ['Reena John', 'Lorance'],
+      title: 'Ménage Résidentiel Complet',
+      speakers: ['Sarah Martin', 'Ahmed Ben'],
       avatars: ['/api/placeholder/40/40', '/api/placeholder/40/40']
     },
     {
       id: 2,
-      title: 'Local Business Global Event',
-      speakers: ['Martin Luthar'],
+      title: 'Nettoyage de Bureaux Professionnels',
+      speakers: ['Karim Aziz'],
       avatars: ['/api/placeholder/40/40']
     }
   ];
@@ -46,7 +46,7 @@ export default function DateDesponible() {
       <div className="max-w-7xl mx-auto">
         
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
-          Date Desponible
+          Dates Disponibles
         </h2>
       
         <div className="flex items-center justify-center mb-8 sm:mb-12 gap-3 sm:gap-4">
@@ -116,7 +116,7 @@ export default function DateDesponible() {
 
                   {/* Speaker Names */}
                   <div className="hidden sm:block">
-                    <div className="text-sm text-gray-400">Speech by</div>
+                    <div className="text-sm text-gray-400">Réalisé par</div>
                     <div className="text-base font-semibold text-white">
                       {conference.speakers.join(' & ')}
                     </div>
@@ -125,13 +125,13 @@ export default function DateDesponible() {
 
                 {/* Right: Book Button */}
                 <button className="px-6 py-2.5 border-2 border-blue-600 text-blue-500 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 font-medium whitespace-nowrap">
-                  Book Ticket
+                  Réserver
                 </button>
               </div>
 
               {/* Mobile Speaker Names */}
               <div className="sm:hidden mt-3 flex items-center gap-2">
-                <span className="text-sm text-gray-400">Speech by</span>
+                <span className="text-sm text-gray-400">Réalisé par</span>
                 <span className="text-sm font-semibold text-white">
                   {conference.speakers.join(' & ')}
                 </span>

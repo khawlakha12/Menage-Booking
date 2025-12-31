@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Ticket, Sun, Moon, Menu, X } from 'lucide-react';
-import { Link } from "react-router-dom";
+import { Calendar, Ticket, Sun, Moon, Menu, X, Clock, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   const [isDark, setIsDark] = useState(true);
@@ -22,11 +21,11 @@ export default function Hero() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="/" className={`${isDark ? 'text-blue-500 hover:text-blue-400' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Accueil</a>
-              <a href="/reservation" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Réservation</a>
-              <a href="/about" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</a>
-              <a href="/blog" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</a>
-              <a href="/contact" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-blue-600 hover:text-blue-700'} transition-colors font-medium`}>Contact</a>
+              <a href="/" className={`${isDark ? 'text-blue-500 hover:text-blue-400' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Home</a>
+              <a href="/Reservation" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Reservation</a>
+              <a href="/About" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>About</a>
+              <a href="/Blog" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</a>
+              <a href="/contact" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</a>
             </div>
 
             {/* Right Side Actions */}
@@ -37,11 +36,11 @@ export default function Hero() {
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <button className={`hidden md:block px-4 py-2 ${isDark ? 'text-blue-400 hover:text-blue-300' : 'text-gray-700 hover:text-gray-900'} transition-colors`}>
-                Connexion
+              <button className={`hidden md:block px-4 py-2 ${isDark ? 'text-blue-500 hover:text-[#0a1628]' : 'text-gray-700 hover:text-gray-900'} transition-colors`}>
+                Sign In
               </button>
               <button className="hidden md:block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                Inscription
+                Sign Up
               </button>
               <button 
                 onClick={() => setMenuOpen(!menuOpen)}
@@ -54,15 +53,15 @@ export default function Hero() {
 
           {/* Mobile Menu */}
           {menuOpen && (
-            <div className="md:hidden py-4 space-y-3 border-t border-gray-800">
-              <a href="/" className="block text-blue-500 hover:text-blue-400 transition-colors font-medium">Accueil</a>
-              <a href="/reservation" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Réservation</a>
-              <a href="/about" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</a>
-              <a href="/blog" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</a>
+            <div className="md:hidden py-4 space-y-3">
+              <a href="/" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Home</a>
+              <a href="/Reservation" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Reservation</a>
+              <a href="/About" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>About</a>
+              <a href="/Blog" className="block text-blue-500 hover:text-blue-400 transition-colors">Blog</a>
               <a href="/contact" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</a>
               <div className="pt-3 space-y-2">
-                <button className={`block w-full px-4 py-2 text-center ${isDark ? 'text-blue-400' : 'text-gray-700'}`}>Connexion</button>
-                <button className="block w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Inscription</button>
+                <button className={`block w-full px-4 py-2 text-center ${isDark ? 'text-blue-500' : 'text-gray-700'}`}>Sign In</button>
+                <button className="block w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Sign Up</button>
               </div>
             </div>
           )}
@@ -74,56 +73,71 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-4 lg:space-y-6">
-            <p className="text-blue-400 text-sm sm:text-base">Starts on 01 January 2026</p>
+            <p className="text-blue-400 text-sm sm:text-base flex items-center gap-2">
+              <Sparkles size={16} />
+              Service professionnel disponible 7j/7
+            </p>
             
             <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} leading-tight`}>
-              User Experience Conference
+              Service de Ménage Professionnel
             </h1>
             
             <p className={`text-base sm:text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'} max-w-lg`}>
-              We offer you a new generation of task and project management system. Plan, manage and track.
+              Un espace propre et sain pour votre bien-être. Nos experts transforment votre maison ou bureau en un environnement éclatant de propreté.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="flex items-center justify-center space-x-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                 <Ticket size={20} />
-                <span>Buy access pass</span>
+                <span>Réserver maintenant</span>
               </button>
-              <button className={`flex items-center justify-center space-x-2 px-6 py-3 border ${isDark ? 'border-[#0a1628] text-[#0a1628] hover:bg-gray-800' : 'border-gray-300 text-gray-700 hover:bg-gray-50'} rounded-lg transition-colors`}>
+              <button className={`flex items-center justify-center space-x-2 px-6 py-3 border ${isDark ? 'border-gray-700 text-gray-300 hover:bg-gray-800' : 'border-gray-300 text-gray-700 hover:bg-gray-50'} rounded-lg transition-colors`}>
                 <Calendar size={20} />
-                <span>Add to calendar</span>
+                <span>Planifier rendez-vous</span>
               </button>
+            </div>
+
+            {/* Stats */}
+            <div className="flex gap-6 pt-4">
+              <div>
+                <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>500+</p>
+                <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Clients satisfaits</p>
+              </div>
+              <div>
+                <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>4.9</p>
+                <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Note moyenne</p>
+              </div>
+              <div>
+                <p className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>10+</p>
+                <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Ans d'expérience</p>
+              </div>
             </div>
           </div>
 
-          {/* Right Content - Speaker Cards */}
+          {/* Right Content - Service Cards */}
           <div className="relative h-[350px] sm:h-[400px] lg:h-[380px]">
             {/* Blue Circle Background */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[250px] sm:w-[300px] h-[250px] sm:h-[300px] bg-blue-400 rounded-full"></div>
             
-            {/* John Karter Card */}
+            {/* Service Card 1 - Ménage Résidentiel */}
             <div className="absolute top-0 left-0 sm:left-8 z-10">
               <div className="bg-yellow-400 text-gray-900 rounded-2xl px-4 py-3 shadow-lg mb-3">
-                <p className="font-semibold">John Karter</p>
-                <p className="text-sm">4.8 rating</p>
+                <p className="font-semibold">Ménage Résidentiel</p>
+                <p className="text-sm">À partir de 25€/h</p>
               </div>
-              <div className="w-[120px] sm:w-[160px] h-[160px] sm:h-[200px] bg-gradient-to-br from-blue-300 to-blue-400 rounded-3xl overflow-hidden shadow-xl">
-                <div className="w-full h-full bg-gray-300 flex items-end justify-center">
-                  <div className="w-full h-3/4 bg-gradient-to-b from-gray-400 to-gray-500"></div>
-                </div>
+              <div className="w-[120px] sm:w-[160px] h-[160px] sm:h-[200px] bg-gradient-to-br from-blue-300 to-blue-400 rounded-3xl overflow-hidden shadow-xl flex items-center justify-center">
+                <div className="text-white text-5xl">🏠</div>
               </div>
             </div>
             
-            {/* Mariya John Card */}
+            {/* Service Card 2 - Ménage Commercial */}
             <div className="absolute top-12 sm:top-16 right-0 sm:right-8 z-10">
               <div className="bg-green-300 text-gray-900 rounded-2xl px-4 py-3 shadow-lg mb-3 ml-auto w-max">
-                <p className="font-semibold">Mariya John</p>
-                <p className="text-sm">4.9 rating</p>
+                <p className="font-semibold">Ménage Commercial</p>
+                <p className="text-sm">Devis personnalisé</p>
               </div>
-              <div className="w-[140px] sm:w-[180px] h-[180px] sm:h-[240px] bg-gradient-to-br from-blue-400 to-blue-500 rounded-3xl overflow-hidden shadow-xl">
-                <div className="w-full h-full bg-gray-300 flex items-end justify-center">
-                  <div className="w-full h-4/5 bg-gradient-to-b from-gray-400 to-gray-500"></div>
-                </div>
+              <div className="w-[140px] sm:w-[180px] h-[180px] sm:h-[240px] bg-gradient-to-br from-blue-400 to-blue-500 rounded-3xl overflow-hidden shadow-xl flex items-center justify-center">
+                <div className="text-white text-6xl">🏢</div>
               </div>
             </div>
           </div>

@@ -8,25 +8,25 @@ export default function PreviousYearHighlights() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h4 className="text-2xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Previous Year<br />Highlights
+              Nos Résultats<br />En Chiffres
             </h4>
 
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-lg">
-              Many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form injected humour, or randomised words
+              Une expérience de plus de 10 ans dans le domaine du ménage professionnel. Nos clients nous font confiance pour la qualité et la fiabilité de nos services de nettoyage résidentiel et commercial.
             </p>
 
             <div className="flex flex-wrap gap-8 lg:gap-12">
               <div>
-                <div className="text-4xl sm:text-5xl font-bold text-white mb-2">10k+</div>
-                <div className="text-gray-400 text-sm sm:text-base">Ticket confirmed</div>
+                <div className="text-4xl sm:text-5xl font-bold text-white mb-2">500+</div>
+                <div className="text-gray-400 text-sm sm:text-base">Clients satisfaits</div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl font-bold text-white mb-2">16</div>
-                <div className="text-gray-400 text-sm sm:text-base">Partners</div>
+                <div className="text-4xl sm:text-5xl font-bold text-white mb-2">15</div>
+                <div className="text-gray-400 text-sm sm:text-base">Employés qualifiés</div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl font-bold text-white mb-2">150k+</div>
-                <div className="text-gray-400 text-sm sm:text-base">Participants</div>
+                <div className="text-4xl sm:text-5xl font-bold text-white mb-2">2000+</div>
+                <div className="text-gray-400 text-sm sm:text-base">Interventions réalisées</div>
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-
 export default function ConferenceGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -103,15 +102,15 @@ export default function ConferenceGallery() {
           {/* Right Side - Content */}
           <div className="space-y-4 lg:space-y-6">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Best Online and Offline Conferences
+              Notre Galerie de Services de Ménage
             </h2>
 
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-xl">
-              Sometimes by accident, sometimes chunks as necessary making this the first true generator on the Internet. recently with desktop publishing software like Aldus PageMaker
+              Découvrez nos réalisations et la qualité de notre travail à travers notre galerie photos. Du ménage résidentiel au nettoyage professionnel, nous garantissons un résultat impeccable à chaque intervention.
             </p>
 
             <button className="px-8 py-3 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 font-medium">
-              Upcoming conferences
+              Voir tous nos services
             </button>
           </div>
         </div>
