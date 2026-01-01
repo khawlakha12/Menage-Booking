@@ -47,11 +47,10 @@ export default function BookingFooter() {
           {/* Column 1: Logo and Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">M</span>
-              </div>
-              <span className="text-xl font-semibold text-white">Booking</span>
-            </div>
+  <div className="w-auto h-16 rounded-lg overflow-hidden flex items-center justify-center">
+     <img src="image/logo.png" alt="Logo" className="w-full h-full object-cover" />
+  </div>
+</div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Services professionnels de nettoyage et d'entretien de la maison à votre domicile. Nous redonnons de l'éclat à votre espace avec soin et précision.
             </p>
