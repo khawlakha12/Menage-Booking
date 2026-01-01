@@ -16,10 +16,9 @@ export default function Hero() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
 <div className="flex items-center space-x-2">
-  <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
+  <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
      <img src="../../../public/image/Logo_menage-removebg.png" alt="Logo" className="w-full h-full object-cover" />
   </div>
-  <span className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Booking</span>
 </div>
 
             {/* Desktop Navigation */}
