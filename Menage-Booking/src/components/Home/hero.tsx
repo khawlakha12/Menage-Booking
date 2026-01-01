@@ -17,7 +17,7 @@ export default function Hero() {
             {/* Logo */}
 <div className="flex items-center space-x-2">
   <div className="w-20 h-20 rounded-lg overflow-hidden flex items-center justify-center">
-     <img src="image/Logo_menage-removebg.png" alt="Logo" className="w-full h-full object-cover" />
+     <img src="image/logo.png" alt="Logo" className="w-full h-full object-cover" />
   </div>
 </div>
 
