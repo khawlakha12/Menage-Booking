@@ -16,6 +16,51 @@ Elle permet aux utilisateurs de **réserver des services de ménage** facilement
 - 📱 Design responsive
 
 ---
+🌐 Déploiement
+
+L’application est déployée en production sur Vercel.
+
+🔗 Lien du site en ligne :
+👉 https://menage-booking.vercel.app/
+
+⚙️ Configuration du déploiement
+
+Framework : Vite
+
+Build Command : npm run build
+
+Output Directory : dist
+
+Routing SPA géré avec vercel.json
+
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
+
+Cette configuration permet le bon fonctionnement du routing React lors de l’accès direct aux pages comme /reservation, /blog, etc.
+
+---
+
+▶️ Installation et lancement en local
+# Cloner le projet
+git clone https://github.com/khawlakha12/Menage-Booking.git
+
+# Accéder au dossier
+cd Menage-Booking
+
+# Installer les dépendances
+npm install
+
+# Lancer le projet
+npm run dev
+
+---
 
 ## 🛠️ Technologies utilisées
 
@@ -70,44 +115,3 @@ Menage-Booking/
 ├── package.json
 └── README.md
 
-🌐 Déploiement
-
-L’application est déployée en production sur Vercel.
-
-🔗 Lien du site en ligne :
-👉 https://menage-booking.vercel.app/
-
-⚙️ Configuration du déploiement
-
-Framework : Vite
-
-Build Command : npm run build
-
-Output Directory : dist
-
-Routing SPA géré avec vercel.json
-
-{
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
-
-
-Cette configuration permet le bon fonctionnement du routing React lors de l’accès direct aux pages comme /reservation, /blog, etc.
-
-▶️ Installation et lancement en local
-# Cloner le projet
-git clone https://github.com/khawlakha12/Menage-Booking.git
-
-# Accéder au dossier
-cd Menage-Booking
-
-# Installer les dépendances
-npm install
-
-# Lancer le projet
-npm run dev
