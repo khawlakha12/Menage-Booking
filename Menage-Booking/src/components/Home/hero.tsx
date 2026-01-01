@@ -16,7 +16,7 @@ export default function Hero() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
 <div className="flex items-center space-x-2">
-  <div className="w-20 h-20 rounded-lg overflow-hidden flex items-center justify-center">
+  <div className="w-auto h-20 rounded-lg overflow-hidden flex items-center justify-center">
      <img src="image/logo.png" alt="Logo" className="w-full h-full object-cover" />
   </div>
 </div>
