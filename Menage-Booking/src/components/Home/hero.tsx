@@ -16,7 +16,7 @@ export default function Hero() {
             {/* Logo */}
 <div className="flex items-center space-x-2">
   <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
-     <img src="/image/Logo.png" alt="Logo" className="w-full h-full object-cover" />
+     <img src="/image/Logo_menage-removebg.png" alt="Logo" className="w-full h-full object-cover" />
   </div>
   <span className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Booking</span>
 </div>
