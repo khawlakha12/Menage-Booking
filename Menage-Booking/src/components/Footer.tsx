@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Facebook, Twitter, Linkedin, ArrowUp } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, ArrowUp, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { Link } from "react-router-dom";
 
-export default function ConferenceFooter() {
+export default function BookingFooter() {
   const [email, setEmail] = useState('');
 
   const scrollToTop = () => {
@@ -20,92 +20,119 @@ export default function ConferenceFooter() {
     <footer className="bg-[#0a1628] pt-8 sm:pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CTA Banner */}
-        <div className="relative bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 mb-8 sm:mb-12 overflow-hidden shadow-xl/30">
-          {/* Ticket Illustration - Left Side */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/3 sm:w-auto hidden sm:block">
+        <div className="relative bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 mb-8 sm:mb-12 overflow-hidden shadow-2xl">
+          {/* Cleaning Illustration - Left Side */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1/3 sm:w-auto hidden sm:block opacity-20">
             <div className="relative">
-              {/* Main Ticket */}
-              <div className="bg-white rounded-lg transform -rotate-12 shadow-2xl p-4 sm:p-6 w-48 sm:w-64">
-                <div className="text-sm sm:text-base font-semibold text-gray-800 mb-1">User Experience</div>
-                <div className="text-xs sm:text-sm font-semibold text-gray-800 mb-2">Conference</div>
-                <div className="text-xs text-gray-600 mb-2">Lulumall</div>
-                <div className="text-xs text-gray-600 mb-3">10AM-4PM</div>
-                {/* Barcode */}
-                <div className="flex gap-[2px] h-12">
-                  {[...Array(20)].map((_, i) => (
-                    <div key={i} className="flex-1 bg-gray-800" style={{ opacity: Math.random() > 0.3 ? 1 : 0.3 }}></div>
-                  ))}
-                </div>
-              </div>
-              {/* Background Ticket Shadow */}
-              <div className="absolute -bottom-4 -right-4 bg-blue-700 rounded-lg transform -rotate-12 w-48 sm:w-64 h-32 sm:h-40 -z-10"></div>
-              {/* Date Badge */}
-              <div className="absolute -left-8 top-1/2 -translate-y-1/2 bg-blue-800 rounded-lg p-3 sm:p-4 transform -rotate-12">
-                <div className="text-4xl sm:text-6xl font-bold text-white">16</div>
-                <div className="text-xs text-blue-200">JAN 2022</div>
-              </div>
+              {/* Cleaning Icons */}
+              <div className="text-white text-8xl">🧹</div>
+              <div className="absolute -bottom-4 -right-8 text-white text-6xl">✨</div>
+              <div className="absolute top-0 -left-8 text-white text-5xl">🧽</div>
             </div>
           </div>
 
           {/* Content - Right Side */}
           <div className="relative z-10 text-center sm:text-right ml-0 sm:ml-auto max-w-xl sm:max-w-md lg:max-w-lg">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-              Become a Part of<br />the Digital Evolution!
+              Book Your Professional<br />Cleaning Service Today!
             </h2>
-            <button className="bg-cyan-400 hover:bg-cyan-300 text-blue-900 font-semibold px-8 sm:px-10 py-3 sm:py-3.5 rounded-lg transition-colors text-base sm:text-lg">
-              Book ticket
+            <button className="bg-cyan-400 hover:bg-cyan-300 text-blue-900 font-semibold px-8 sm:px-10 py-3 sm:py-3.5 rounded-lg transition-colors text-base sm:text-lg shadow-lg hover:shadow-xl">
+              Book Now
             </button>
           </div>
         </div>
 
         {/* Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Left: Logo and Navigation */}
-          <div className="space-y-6">
-            {/* Logo */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {/* Column 1: Logo and Description */}
+          <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">M</span>
               </div>
               <span className="text-xl font-semibold text-white">Booking</span>
             </div>
-
-            {/* Navigation */}
-            <nav className="flex flex-wrap gap-4 sm:gap-6 text-sm sm:text-base">
-              <Link to="/" className="text-gray-400 hover:text-white transition-colors">Accueil</Link>
-              <Link to="/reservation" className="text-gray-400 hover:text-white transition-colors">Réservation</Link>
-              <Link to="/blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link>
-              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link>
-            </nav>
-
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Professional cleaning and home maintenance services at your doorstep. We make your space sparkle with care and precision.
+            </p>
             {/* Social Icons */}
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 bg-[#1a2642] hover:bg-[#243252] rounded-lg flex items-center justify-center transition-colors">
+            <div className="flex gap-3">
+              <a href="#" className="w-10 h-10 bg-[#1a2642] hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
                 <Facebook size={20} className="text-gray-400 hover:text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-[#1a2642] hover:bg-[#243252] rounded-lg flex items-center justify-center transition-colors">
+              <a href="#" className="w-10 h-10 bg-[#1a2642] hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
                 <Twitter size={20} className="text-gray-400 hover:text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-[#1a2642] hover:bg-[#243252] rounded-lg flex items-center justify-center transition-colors">
+              <a href="#" className="w-10 h-10 bg-[#1a2642] hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors">
                 <Linkedin size={20} className="text-gray-400 hover:text-white" />
               </a>
             </div>
           </div>
 
-          {/* Right: Newsletter */}
+          {/* Column 2: Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg sm:text-xl font-semibold text-white">Subscribe Newsletter</h3>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+            <nav className="flex flex-col space-y-3 text-sm">
+              <Link to="/" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Home</Link>
+              <Link to="/reservation" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Book Service</Link>
+              <Link to="/about" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">About Us</Link>
+              <Link to="/blog" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Blog</Link>
+              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Contact</Link>
+            </nav>
+          </div>
+
+          {/* Column 3: Our Services */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Our Services</h3>
+            <ul className="flex flex-col space-y-3 text-sm text-gray-400">
+              <li className="hover:text-white transition-colors cursor-pointer">House Cleaning</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Deep Cleaning</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Office Cleaning</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Window Cleaning</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Move In/Out Cleaning</li>
+            </ul>
+          </div>
+
+          {/* Column 4: Contact Info */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-white">Contact Us</h3>
+            <div className="space-y-3 text-sm text-gray-400">
+              <div className="flex items-start gap-3">
+                <MapPin size={18} className="text-blue-500 flex-shrink-0 mt-0.5" />
+                <span>123 Clean Street, Agadir, Morocco</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone size={18} className="text-blue-500 flex-shrink-0" />
+                <span>+212 6XX-XXXXXX</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail size={18} className="text-blue-500 flex-shrink-0" />
+                <span>contact@mbooking.com</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock size={18} className="text-blue-500 flex-shrink-0 mt-0.5" />
+                <span>Mon - Sat: 8AM - 8PM<br />Sunday: Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="bg-[#1a2642] rounded-2xl p-6 sm:p-8 mb-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">Subscribe to Our Newsletter</h3>
+            <p className="text-gray-400 text-sm mb-6">Get special offers, cleaning tips, and updates delivered to your inbox</p>
+            <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email address*"
-                className="flex-1 px-4 py-3 bg-[#1a2642] text-white rounded-lg border border-gray-700 focus:border-blue-500 focus:outline-none placeholder-gray-500"
+                placeholder="Enter your email address"
+                className="flex-1 px-4 py-3 bg-[#0a1628] text-white rounded-lg border border-gray-700 focus:border-blue-500 focus:outline-none placeholder-gray-500"
               />
               <button
                 onClick={handleSubscribe}
-                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors whitespace-nowrap"
+                className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors whitespace-nowrap shadow-lg hover:shadow-xl"
               >
                 Subscribe
               </button>
@@ -117,9 +144,12 @@ export default function ConferenceFooter() {
         <div className="border-t border-gray-800 pt-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500 text-center sm:text-left">
-              © All rights reserved. Made by Khawla kharbouchi<br className="sm:hidden" />
-              <span className="hidden sm:inline"> </span> by react and typescript
+              © 2024 MBooking. All rights reserved. Made with ❤️ by Khawla Kharbouchi
             </p>
+            <div className="flex gap-6 text-sm text-gray-500">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            </div>
           </div>
         </div>
       </div>
