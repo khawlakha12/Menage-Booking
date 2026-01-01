@@ -33,16 +33,6 @@ Output Directory : dist
 
 Routing SPA géré avec vercel.json
 
-{
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
-
-
 Cette configuration permet le bon fonctionnement du routing React lors de l’accès direct aux pages comme /reservation, /blog, etc.
 
 ---
@@ -114,4 +104,16 @@ Menage-Booking/
 ├── vite.config.js
 ├── package.json
 └── README.md
+
+
+vercel.json
+
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
 
