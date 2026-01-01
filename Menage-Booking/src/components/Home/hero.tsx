@@ -93,7 +93,7 @@ export default function Hero() {
                 <Ticket size={20} />
                 <span>Réserver maintenant</span>
               </button>
-              <button className={`flex items-center justify-center space-x-2 px-6 py-3 border ${isDark ? 'border-gray-700 text-gray-300 hover:bg-gray-800' : 'border-gray-300 text-gray-700 hover:bg-gray-50'} rounded-lg transition-colors`}>
+              <button className={`flex items-center justify-center space-x-2 px-6 py-3 border ${isDark ? 'border-gray-700 text-blue-700 hover:bg-gray-800' : 'border-gray-300 text-gray-700 hover:bg-gray-50'} rounded-lg transition-colors`}>
                 <Calendar size={20} />
                 <span>Planifier rendez-vous</span>
               </button>
