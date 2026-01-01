@@ -34,10 +34,10 @@ export default function BookingFooter() {
           {/* Content - Right Side */}
           <div className="relative z-10 text-center sm:text-right ml-0 sm:ml-auto max-w-xl sm:max-w-md lg:max-w-lg">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-              Book Your Professional<br />Cleaning Service Today!
+             Réservez votre professionnel<br />Service de nettoyage aujourd'hui !
             </h2>
             <button className="bg-cyan-400 hover:bg-cyan-300 text-blue-900 font-semibold px-8 sm:px-10 py-3 sm:py-3.5 rounded-lg transition-colors text-base sm:text-lg shadow-lg hover:shadow-xl">
-              Book Now
+              Réservez maintenant
             </button>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function BookingFooter() {
               <span className="text-xl font-semibold text-white">Booking</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Professional cleaning and home maintenance services at your doorstep. We make your space sparkle with care and precision.
+              Services professionnels de nettoyage et d'entretien de la maison à votre domicile. Nous redonnons de l'éclat à votre espace avec soin et précision.
             </p>
             {/* Social Icons */}
             <div className="flex gap-3">
@@ -71,11 +71,11 @@ export default function BookingFooter() {
 
           {/* Column 2: Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-white">Liens rapides</h3>
             <nav className="flex flex-col space-y-3 text-sm">
-              <Link to="/" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Home</Link>
-              <Link to="/reservation" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Book Service</Link>
-              <Link to="/about" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">About Us</Link>
+              <Link to="/" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Accueil</Link>
+              <Link to="/reservation" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Réservation</Link>
+              <Link to="/about" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">À propos</Link>
               <Link to="/blog" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Blog</Link>
               <Link to="/contact" className="text-gray-400 hover:text-white transition-colors hover:translate-x-1 transform duration-200">Contact</Link>
             </nav>
@@ -83,23 +83,23 @@ export default function BookingFooter() {
 
           {/* Column 3: Our Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Our Services</h3>
+            <h3 className="text-lg font-semibold text-white">Nos services</h3>
             <ul className="flex flex-col space-y-3 text-sm text-gray-400">
-              <li className="hover:text-white transition-colors cursor-pointer">House Cleaning</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Deep Cleaning</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Office Cleaning</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Window Cleaning</li>
-              <li className="hover:text-white transition-colors cursor-pointer">Move In/Out Cleaning</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Nettoyage de maison</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Nettoyage en profondeur</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Nettoyage des bureaux</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Nettoyage des vitres</li>
+              <li className="hover:text-white transition-colors cursor-pointer">Nettoyage avant/après déménagement</li>
             </ul>
           </div>
 
           {/* Column 4: Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Contact Us</h3>
+            <h3 className="text-lg font-semibold text-white">Contactez-nous</h3>
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-blue-500 flex-shrink-0 mt-0.5" />
-                <span>123 Clean Street, Agadir, Morocco</span>
+                <span>123, rue Clean, Agadir, Maroc</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={18} className="text-blue-500 flex-shrink-0" />
@@ -107,11 +107,11 @@ export default function BookingFooter() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-blue-500 flex-shrink-0" />
-                <span>contact@mbooking.com</span>
+                <span>contact@menage-booking.com</span>
               </div>
               <div className="flex items-start gap-3">
                 <Clock size={18} className="text-blue-500 flex-shrink-0 mt-0.5" />
-                <span>Mon - Sat: 8AM - 8PM<br />Sunday: Closed</span>
+                <span>Lundi - Samedi: 24h/24h<br />Dimanche: Closed</span>
               </div>
             </div>
           </div>
@@ -120,8 +120,8 @@ export default function BookingFooter() {
         {/* Newsletter Section */}
         <div className="bg-[#1a2642] rounded-2xl p-6 sm:p-8 mb-8">
           <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">Subscribe to Our Newsletter</h3>
-            <p className="text-gray-400 text-sm mb-6">Get special offers, cleaning tips, and updates delivered to your inbox</p>
+            <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">Abonnez-vous à notre newsletter</h3>
+            <p className="text-gray-400 text-sm mb-6">Recevez des offres spéciales, des conseils de nettoyage et des mises à jour directement dans votre boîte mail.</p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
               <input
                 type="email"
@@ -144,7 +144,7 @@ export default function BookingFooter() {
         <div className="border-t border-gray-800 pt-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500 text-center sm:text-left">
-              © 2024 MBooking. All rights reserved. Made with ❤️ by Khawla Kharbouchi
+              © 2024 Menage Booking. All rights reserved. Made with ❤️ by Khawla Kharbouchi
             </p>
             <div className="flex gap-6 text-sm text-gray-500">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
