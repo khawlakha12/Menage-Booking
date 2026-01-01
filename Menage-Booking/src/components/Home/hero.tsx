@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Calendar, Ticket, Sun, Moon, Menu, X, Clock, Sparkles } from 'lucide-react';
 import { Link } from "react-router-dom";
 
+
 export default function Hero() {
   const [isDark, setIsDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,12 +14,12 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">M</span>
-              </div>
-              <span className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Booking</span>
-            </div>
+<div className="flex items-center space-x-2">
+  <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
+     <img src="/image/Logo.png" alt="Logo" className="w-full h-full object-cover" />
+  </div>
+  <span className={`text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Booking</span>
+</div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
