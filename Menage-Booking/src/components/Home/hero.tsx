@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar, Ticket, Sun, Moon, Menu, X, Clock, Sparkles } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   const [isDark, setIsDark] = useState(true);
@@ -21,11 +22,11 @@ export default function Hero() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="/" className={`${isDark ? 'text-blue-500 hover:text-blue-400' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Accueil</a>
-              <a href="/Reservation" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Réservation</a>
-              <a href="/About" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</a>
-              <a href="/Blog" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</a>
-              <a href="/contact" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</a>
+              <Link to="/" className={`${isDark ? 'text-blue-500 hover:text-blue-400' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Accueil</Link>
+              <Link to="/Reservation" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Réservation</Link>
+              <Link to="/About" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</Link>
+              <Link to="/Blog" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</Link>
+              <Link to="/contact" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</Link>
             </div>
 
             {/* Right Side Actions */}
@@ -54,11 +55,11 @@ export default function Hero() {
           {/* Mobile Menu */}
           {menuOpen && (
             <div className="md:hidden py-4 space-y-3">
-              <a href="/" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Home</a>
-              <a href="/Reservation" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Reservation</a>
-              <a href="/About" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>About</a>
-              <a href="/Blog" className="block text-blue-500 hover:text-blue-400 transition-colors">Blog</a>
-              <a href="/contact" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</a>
+              <Link to="/" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Home</Link>
+              <Link to="/Reservation" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Reservation</Link>
+              <Link to="/About" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>About</Link>
+              <Link to="/Blog" className="block text-blue-500 hover:text-blue-400 transition-colors">Blog</Link>
+              <Link to="/contact" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</Link>
               <div className="pt-3 space-y-2">
                 <button className={`block w-full px-4 py-2 text-center ${isDark ? 'text-blue-500' : 'text-gray-700'}`}>Sign In</button>
                 <button className="block w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Sign Up</button>

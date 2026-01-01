@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Facebook, Twitter, Linkedin, ArrowUp } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 export default function ConferenceFooter() {
   const [email, setEmail] = useState('');
@@ -71,10 +72,10 @@ export default function ConferenceFooter() {
 
             {/* Navigation */}
             <nav className="flex flex-wrap gap-4 sm:gap-6 text-sm sm:text-base">
-              <a href="/" className="text-gray-400 hover:text-white transition-colors">Accueil</a>
-              <a href="/Reservation" className="text-gray-400 hover:text-white transition-colors">Réservation</a>
-              <a href="/Blog" className="text-gray-400 hover:text-white transition-colors">Blog</a>
-              <a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+              <Link to="/" className="text-gray-400 hover:text-white transition-colors">Accueil</Link>
+              <Link to="/Reservation" className="text-gray-400 hover:text-white transition-colors">Réservation</Link>
+              <Link to="/Blog" className="text-gray-400 hover:text-white transition-colors">Blog</Link>
+              <Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link>
             </nav>
 
             {/* Social Icons */}

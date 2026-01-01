@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Clock, Star, X, Calendar, MapPin, Phone, Mail, User, Sun, Moon, Menu } from 'lucide-react';
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 export default function Reservation() {
   const [isDark, setIsDark] = useState(true);
@@ -154,11 +155,11 @@ export default function Reservation() {
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
-              <a href="/" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Accueil</a>
-              <a href="/reservation" className={`${isDark ? 'text-blue-500 hover:text-blue-400' : 'text-blue-600 hover:text-blue-700'} transition-colors font-medium`}>Réservation</a>
-              <a href="/about" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</a>
-              <a href="/blog" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</a>
-              <a href="/contact" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</a>
+              <Link to="/" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Accueil</Link>
+              <Link to="/reservation" className={`${isDark ? 'text-blue-500 hover:text-blue-400' : 'text-blue-600 hover:text-blue-700'} transition-colors font-medium`}>Réservation</Link>
+              <Link to="/About" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</Link>
+              <Link to="/blog" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</Link>
+              <Link to="/contact" className={`${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</Link>
             </div>
 
             <div className="flex items-center space-x-4">
@@ -186,11 +187,11 @@ export default function Reservation() {
           {/* Mobile Menu */}
           {menuOpen && (
             <div className="md:hidden py-4 space-y-3 border-t border-gray-800">
-              <a href="/" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Accueil</a>
-              <a href="/reservation" className="block text-blue-500 hover:text-blue-400 transition-colors font-medium">Réservation</a>
-              <a href="/about" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</a>
-              <a href="/blog" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</a>
-              <a href="/contact" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</a>
+              <Link to="/" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Accueil</Link>
+              <Link to="/reservation" className="block text-blue-500 hover:text-blue-400 transition-colors font-medium">Réservation</Link>
+              <Link to="/About" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>À propos</Link>
+              <Link to="/blog" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</Link>
+              <Link to="/contact" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</Link>
               <div className="pt-3 space-y-2">
                 <button className={`block w-full px-4 py-2 text-center ${isDark ? 'text-blue-400' : 'text-gray-700'}`}>Connexion</button>
                 <button className="block w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Inscription</button>
@@ -213,9 +214,9 @@ export default function Reservation() {
           </div>
           <div className="mt-4 md:mt-0">
             <nav className="flex items-center space-x-2 text-sm">
-              <a href="/" className={`${isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-500 hover:text-gray-700'}`}>
+             <Link to="/" className={`${isDark ? 'text-gray-400 hover:text-gray-300' : 'text-gray-500 hover:text-gray-700'}`}>
                 Accueil
-              </a>
+              </Link>
               <span className={isDark ? 'text-gray-600' : 'text-gray-400'}>›</span>
               <span className={`${isDark ? 'text-white' : 'text-gray-900'} font-medium`}>Services</span>
             </nav>
