@@ -71,10 +71,10 @@ export default function ConferenceFooter() {
 
             {/* Navigation */}
             <nav className="flex flex-wrap gap-4 sm:gap-6 text-sm sm:text-base">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Reservation</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+              <a href="/" className="text-gray-400 hover:text-white transition-colors">Accueil</a>
+              <a href="/Reservation" className="text-gray-400 hover:text-white transition-colors">Réservation</a>
+              <a href="/Blog" className="text-gray-400 hover:text-white transition-colors">Blog</a>
+              <a href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
             </nav>
 
             {/* Social Icons */}
