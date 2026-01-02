@@ -3,15 +3,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function ConferenceGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const images = [
-    { id: 1, url: 'cuisine1', alt: 'Conference participant 1' },
-    { id: 2, url: 'cuisine2', alt: 'Conference participant 2' },
-    { id: 3, url: 'manage1', alt: 'Conference participant 3' },
-    { id: 4, url: 'nono', alt: 'Conference participant 4' },
-    { id: 5, url: 'nono', alt: 'Conference participant 5' },
-  ];
-
+const images = [
+  { id: 1, url: 'cuisine1', alt: 'Cuisine nettoyage 1', src: "image/cuisinier.png" },
+  { id: 2, url: 'cuisine2', alt: 'Cuisine nettoyage 2', src: "image/grand menage.png.png" },
+  { id: 3, url: 'manage1', alt: 'Service ménage 1', src: "image/menage.png" },
+  { id: 4, url: 'nono', alt: 'Service nettoyage 4', src: "image/nounou.png" },
+  { id: 5, url: 'nono', alt: 'Service nettoyage 5', src: "image/nettoyage cuisine.png" },
+];
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
