@@ -38,9 +38,9 @@ export default function Hero() {
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <button className={`hidden md:block px-4 py-2 ${isDark ? 'text-blue-500 hover:text-[#0a1628]' : 'text-gray-700 hover:text-gray-900'} transition-colors`}>
-                Connexion
-              </button>
+              <Link to="/connexion" className={`hidden md:block px-4 py-2 ${isDark ? 'text-blue-500 hover:text-[#0a1628]' : 'text-gray-700 hover:text-gray-900'} transition-colors`}>
+  Connexion
+</Link>
               <button className="hidden md:block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                 Inscription
               </button>
