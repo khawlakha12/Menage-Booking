@@ -5,6 +5,8 @@ import Reservation from "./pages/Reservation";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Login from "./Authentication/SignIn";
+import Register from "./Authentication/SignUp";
+
 import "./App.css";
 
 
@@ -19,6 +21,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
         <Route path="/connexion" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

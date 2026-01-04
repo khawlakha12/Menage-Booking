@@ -3,13 +3,15 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function ConferenceGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
-const images = [
-  { id: 1, url: 'cuisine1', alt: 'Cuisine nettoyage 1', src: "image/cuisinier.png" },
-  { id: 2, url: 'cuisine2', alt: 'Cuisine nettoyage 2', src: "image/grand menage.png.png" },
-  { id: 3, url: 'manage1', alt: 'Service ménage 1', src: "image/menage.png" },
-  { id: 4, url: 'nono', alt: 'Service nettoyage 4', src: "image/nounou.png" },
-  { id: 5, url: 'nono', alt: 'Service nettoyage 5', src: "image/nettoyage cuisine.png" },
-];
+
+  const images = [
+    { id: 1, url: 'cuisine1', alt: 'Cuisine nettoyage 1', src: "image/cuisinier.png" },
+    { id: 2, url: 'cuisine2', alt: 'Cuisine nettoyage 2', src: "image/grand menage.png" },
+    { id: 3, url: 'manage1', alt: 'Service ménage 1', src: "image/menage.png" },
+    { id: 4, url: 'nono', alt: 'Service nettoyage 4', src: "image/nounou.png" },
+    { id: 5, url: 'nono', alt: 'Service nettoyage 5', src: "image/nettoyage cuisine.png" },
+  ];
+
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
@@ -33,8 +35,23 @@ const images = [
             
             {/* Main Image */}
             <div className="relative z-10 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-gradient-to-br from-gray-700 to-gray-800">
-              <div className="w-full h-full flex items-center justify-center text-white text-xl font-semibold">
-                Image {activeIndex + 1}
+              <div className="w-full h-full flex items-center justify-center">
+                <img 
+                  src={images[activeIndex].src} 
+                  alt={images[activeIndex].alt}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = `
+                      <div class="w-full h-full flex flex-col items-center justify-center text-white">
+                        <svg class="w-16 h-16 mb-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <p class="text-xl font-semibold">${images[activeIndex].alt}</p>
+                      </div>
+                    `;
+                  }}
+                />
               </div>
             </div>
 
@@ -57,15 +74,21 @@ const images = [
                     <button
                       key={image.id}
                       onClick={() => handleThumbnailClick(index)}
-                      className={`relative flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 ${
-                        index === activeIndex
-                          ? 'ring-2 sm:ring-4 ring-blue-500 scale-105'
-                          : 'opacity-60 hover:opacity-100'
-                      }`}
+                      className={`relative flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 `}
                     >
-                      <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center text-white text-xs sm:text-sm font-medium">
-                        {index + 1}
-                      </div>
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.parentElement.innerHTML = `
+                            <div class="w-full h-full bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center text-white text-xs sm:text-sm font-medium">
+                              ${index + 1}
+                            </div>
+                          `;
+                        }}
+                      />
                     </button>
                   ))}
                 </div>
@@ -89,7 +112,7 @@ const images = [
                     onClick={() => handleThumbnailClick(idx)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       idx === activeIndex
-                        ? 'bg-blue-500 w-8'
+                        ? 'bg-blue-500 w-2'
                         : 'bg-gray-600 hover:bg-gray-500'
                     }`}
                     aria-label={`Go to image ${idx + 1}`}
