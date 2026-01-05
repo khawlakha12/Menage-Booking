@@ -21,7 +21,7 @@ export default function DateDesponible() {
       title: 'Ménage Résidentiel Complet',
       description: 'Nettoyage en profondeur de toutes les pièces',
       duration: '3-4 heures',
-      price: '75€',
+      price: '150 DH',
       specialists: [
         { name: 'Sarah Martin', rating: 4.9, reviews: 127 },
         { name: 'Ahmed Ben', rating: 4.8, reviews: 98 }
@@ -34,7 +34,7 @@ export default function DateDesponible() {
       title: 'Nettoyage de Bureaux Professionnels',
       description: 'Entretien professionnel des espaces de travail',
       duration: '2-3 heures',
-      price: '95€',
+      price: '200 DH',
       specialists: [
         { name: 'Karim Aziz', rating: 5.0, reviews: 156 }
       ],
@@ -46,7 +46,7 @@ export default function DateDesponible() {
       title: 'Grand Ménage de Printemps',
       description: 'Nettoyage intensif et désinfection complète',
       duration: '5-6 heures',
-      price: '150€',
+      price: '200 DH',
       specialists: [
         { name: 'Sarah Martin', rating: 4.9, reviews: 127 }
       ],
