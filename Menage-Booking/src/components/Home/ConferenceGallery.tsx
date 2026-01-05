@@ -1,15 +1,40 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
 export default function ConferenceGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const images = [
-    { id: 1, url: 'cuisine1', alt: 'Cuisine nettoyage 1', src: "image/cuisinier.png" },
-    { id: 2, url: 'cuisine2', alt: 'Cuisine nettoyage 2', src: "image/grand menage.png" },
-    { id: 3, url: 'manage1', alt: 'Service ménage 1', src: "image/menage.png" },
-    { id: 4, url: 'nono', alt: 'Service nettoyage 4', src: "image/nounou.png" },
-    { id: 5, url: 'nono', alt: 'Service nettoyage 5', src: "image/nettoyage cuisine.png" },
+    { 
+      id: 1, 
+      title: 'Nettoyage Cuisine Professionnel',
+      description: 'Service complet de nettoyage pour cuisines résidentielles',
+      category: 'Résidentiel'
+    },
+    { 
+      id: 2, 
+      title: 'Grand Ménage',
+      description: 'Nettoyage en profondeur de tous les espaces',
+      category: 'Résidentiel'
+    },
+    { 
+      id: 3, 
+      title: 'Service Ménage Standard',
+      description: 'Entretien régulier et nettoyage quotidien',
+      category: 'Résidentiel'
+    },
+    { 
+      id: 4, 
+      title: 'Service Garde d\'Enfants',
+      description: 'Service professionnel de garde et entretien',
+      category: 'Services Additionnels'
+    },
+    { 
+      id: 5, 
+      title: 'Nettoyage Cuisine Commerciale',
+      description: 'Entretien des cuisines professionnelles',
+      category: 'Commercial'
+    },
   ];
 
   const handlePrev = () => {
@@ -25,70 +50,92 @@ export default function ConferenceGallery() {
   };
 
   return (
-    <div className="bg-[#0f1e31] py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-[#0f1e31] py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Image Gallery */}
           <div className="relative w-full">
-            {/* Decorative Circle - Hidden on mobile */}
+            {/* Decorative Elements */}
             <div className="hidden lg:block absolute -left-20 top-1/2 transform -translate-y-1/2 w-64 h-64 bg-blue-900/20 rounded-full blur-3xl"></div>
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-green-500/10 rounded-full blur-2xl"></div>
             
-            {/* Main Image */}
-            <div className="relative z-10 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-gradient-to-br from-gray-700 to-gray-800">
-              <div className="w-full h-full flex items-center justify-center">
-                <img 
-                  src={images[activeIndex].src} 
-                  alt={images[activeIndex].alt}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.parentElement.innerHTML = `
-                      <div class="w-full h-full flex flex-col items-center justify-center text-white">
-                        <svg class="w-16 h-16 mb-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        <p class="text-xl font-semibold">${images[activeIndex].alt}</p>
-                      </div>
-                    `;
-                  }}
-                />
+            {/* Main Image Container */}
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 group">
+              {/* Image */}
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-800">
+                <div className="text-center p-8">
+                  <div className="text-8xl mb-4">
+                    {activeIndex === 0 && '🍳'}
+                    {activeIndex === 1 && '🧹'}
+                    {activeIndex === 2 && '✨'}
+                    {activeIndex === 3 && '👶'}
+                    {activeIndex === 4 && '🏢'}
+                  </div>
+                  <h3 className="text-white text-2xl font-bold mb-2">
+                    {images[activeIndex].title}
+                  </h3>
+                  <p className="text-blue-200 text-sm">
+                    {images[activeIndex].description}
+                  </p>
+                  <span className="inline-block mt-4 px-4 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">
+                    {images[activeIndex].category}
+                  </span>
+                </div>
               </div>
+
+              {/* Zoom overlay on hover */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                <ZoomIn className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" size={48} />
+              </div>
+
+              {/* Navigation Arrows on Image */}
+              <button
+                onClick={handlePrev}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white transition-all opacity-0 group-hover:opacity-100"
+                aria-label="Previous image"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={handleNext}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-black/50 hover:bg-black/70 text-white transition-all opacity-0 group-hover:opacity-100"
+                aria-label="Next image"
+              >
+                <ChevronRight size={24} />
+              </button>
             </div>
 
             {/* Thumbnail Navigation */}
-            <div className="mt-4 sm:mt-6 relative px-2 sm:px-0">
-              <div className="flex items-center justify-center space-x-2 sm:space-x-3">
+            <div className="mt-6 relative">
+              <div className="flex items-center justify-center space-x-3">
                 {/* Previous Button */}
                 <button
                   onClick={handlePrev}
-                  className="flex-shrink-0 p-1.5 sm:p-2 rounded-full bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 transition-colors z-10"
+                  className="flex-shrink-0 p-2 rounded-full bg-blue-600/30 hover:bg-blue-600/50 text-blue-400 transition-all hover:scale-110"
                   aria-label="Previous image"
                 >
-                  <ChevronLeft size={18} className="sm:hidden" />
-                  <ChevronLeft size={20} className="hidden sm:block" />
+                  <ChevronLeft size={20} />
                 </button>
 
                 {/* Thumbnails */}
-                <div className="flex space-x-1.5 sm:space-x-2 overflow-x-auto scrollbar-hide max-w-[200px] sm:max-w-none">
+                <div className="flex space-x-2 overflow-x-auto scrollbar-hide">
                   {images.map((image, index) => (
                     <button
                       key={image.id}
                       onClick={() => handleThumbnailClick(index)}
-                      className={`relative flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300 `}
+                      className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden transition-all duration-300 ${
+                        index === activeIndex
+                          ? 'ring-4 ring-blue-500 scale-110'
+                          : 'opacity-50 hover:opacity-100'
+                      }`}
                     >
-                      <img 
-                        src={image.src} 
-                        alt={image.alt}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.parentElement.innerHTML = `
-                            <div class="w-full h-full bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center text-white text-xs sm:text-sm font-medium">
-                              ${index + 1}
-                            </div>
-                          `;
-                        }}
-                      />
+                      <div className="w-full h-full bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center text-2xl">
+                        {index === 0 && '🍳'}
+                        {index === 1 && '🧹'}
+                        {index === 2 && '✨'}
+                        {index === 3 && '👶'}
+                        {index === 4 && '🏢'}
+                      </div>
                     </button>
                   ))}
                 </div>
@@ -96,44 +143,67 @@ export default function ConferenceGallery() {
                 {/* Next Button */}
                 <button
                   onClick={handleNext}
-                  className="flex-shrink-0 p-1.5 sm:p-2 rounded-full bg-blue-600/20 hover:bg-blue-600/40 text-blue-400 transition-colors z-10"
+                  className="flex-shrink-0 p-2 rounded-full bg-blue-600/30 hover:bg-blue-600/50 text-blue-400 transition-all hover:scale-110"
                   aria-label="Next image"
                 >
-                  <ChevronRight size={18} className="sm:hidden" />
-                  <ChevronRight size={20} className="hidden sm:block" />
+                  <ChevronRight size={20} />
                 </button>
               </div>
 
-              {/* Dot Indicators */}
-              <div className="flex justify-center space-x-1.5 sm:space-x-2 mt-3 sm:mt-4">
-                {images.map((image, idx) => (
+              {/* Progress Indicator */}
+              <div className="flex justify-center space-x-2 mt-4">
+                {images.map((_, idx) => (
                   <button
-                    key={image.id}
+                    key={idx}
                     onClick={() => handleThumbnailClick(idx)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    className={`h-1 rounded-full transition-all duration-300 ${
                       idx === activeIndex
-                        ? 'bg-blue-500 w-2'
-                        : 'bg-gray-600 hover:bg-gray-500'
+                        ? 'bg-blue-500 w-8'
+                        : 'bg-gray-600 hover:bg-gray-500 w-4'
                     }`}
                     aria-label={`Go to image ${idx + 1}`}
                   />
                 ))}
               </div>
+
+              {/* Image Counter */}
+              <div className="text-center mt-3 text-gray-400 text-sm font-medium">
+                {activeIndex + 1} / {images.length}
+              </div>
             </div>
           </div>
 
           {/* Right Side - Content */}
-          <div className="space-y-4 sm:space-y-5 lg:space-y-6 text-center lg:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight px-2 sm:px-0">
-              Notre Galerie de Services de Ménage
+          <div className="space-y-6 text-center lg:text-left">
+            <div className="inline-block px-4 py-2 bg-blue-600/10 rounded-full border border-blue-600/20">
+              <span className="text-blue-400 text-sm font-semibold">Nos Réalisations</span>
+            </div>
+
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Notre Galerie de Services de
+              <span className="text-blue-400"> Ménage</span>
             </h2>
 
-            <p className="text-gray-400 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 px-2 sm:px-0">
-              Découvrez nos réalisations et la qualité de notre travail à travers notre galerie photos. Du ménage résidentiel au nettoyage professionnel, nous garantissons un résultat impeccable à chaque intervention.
+            <p className="text-gray-400 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Découvrez nos réalisations et la qualité de notre travail à travers notre galerie. Du ménage résidentiel au nettoyage professionnel, nous garantissons un résultat impeccable à chaque intervention.
             </p>
 
-            <div className="pt-2 sm:pt-0">
-              <button className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 font-medium text-sm sm:text-base">
+            {/* Features */}
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50">
+                <div className="text-3xl mb-2">✓</div>
+                <p className="text-white font-semibold mb-1">100% Satisfait</p>
+                <p className="text-gray-400 text-sm">Garantie qualité</p>
+              </div>
+              <div className="bg-gray-800/50 rounded-xl p-4 border border-gray-700/50">
+                <div className="text-3xl mb-2">⚡</div>
+                <p className="text-white font-semibold mb-1">Service Rapide</p>
+                <p className="text-gray-400 text-sm">Intervention 24/7</p>
+              </div>
+            </div>
+
+            <div className="pt-4">
+              <button className="px-8 py-4 border-2 border-blue-500 text-blue-500 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 font-semibold shadow-lg hover:shadow-xl hover:scale-105">
                 Voir tous nos services
               </button>
             </div>
