@@ -169,9 +169,16 @@ export default function Reservation() {
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <button className={`hidden md:block px-4 py-2 ${isDark ? 'text-blue-400 hover:text-blue-300' : 'text-gray-700 hover:text-gray-900'} transition-colors`}>
+                            <Link 
+                to="/connexion" 
+                className={`hidden md:block px-4 py-2 rounded-lg ${
+                  isDark 
+                    ? 'bg-gray-800 text-white hover:bg-gray-700 border border-gray-700' 
+                    : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-300'
+                } transition-all duration-200`}
+              >
                 Connexion
-              </button>
+              </Link>
               <button className="hidden md:block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                 Inscription
               </button>
@@ -193,8 +200,8 @@ export default function Reservation() {
               <Link to="/blog" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Blog</Link>
               <Link to="/contact" className={`block ${isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}>Contact</Link>
               <div className="pt-3 space-y-2">
-                <button className={`block w-full px-4 py-2 text-center ${isDark ? 'text-blue-400' : 'text-gray-700'}`}>Connexion</button>
-                <button className="block w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Inscription</button>
+                <a href='/connexion' className={`block w-full px-4 py-2 text-center ${isDark ? 'text-blue-400' : 'text-gray-700'}`}>Connexion</a>
+                <a href='/register' className="block w-full px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Inscription</a>
               </div>
             </div>
           )}
